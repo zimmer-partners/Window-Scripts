@@ -1,5 +1,5 @@
 -- Written by Moritz Zimmer -- Concept & Code -- omo@oio.ch -- www.oio.ch --
--- ZŸrich, November 14, 2009
+-- ZÃ¼rich, November 14, 2009
 
 property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Signal Private Messenger"}
 
@@ -8,7 +8,7 @@ property maxWindowWidth : 1275
 property maxWideWindowWidth : 1675
 property stackingGap : 35
 property standardGap : 5
-property dockGap : 10
+property dockGap : 0
 property finderGap : 165
 property snappingGap : 20
 property menubarHeight : 23
@@ -47,7 +47,7 @@ on run
 			if name of xProcess is not in excludeApps then
 				set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Downloads" and name is not "Open")
 				set windowCount to count of standardWindows
-				if windowCount ³ 1 then
+				if windowCount â‰¥ 1 then
 					set maxWidth to boundWidth
 					set maxHeight to boundHeight
 					set x to 0

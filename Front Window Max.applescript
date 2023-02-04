@@ -1,5 +1,5 @@
 -- Written by Moritz Zimmer -- Concept & Code -- omo@oio.ch -- www.oio.ch --
--- ZŸrich, November 14, 2009
+-- ZÃ¼rich, November 14, 2009
 
 property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Franz", "Signal Private Messenger"}
 
@@ -8,7 +8,7 @@ property maxWindowWidth : 1275
 property maxWideWindowWidth : 1475
 property stackingGap : 35
 property standardGap : 5
-property dockGap : 10
+property dockGap : 0
 property finderGap : 165
 property snappingGap : 20
 property menubarHeight : 23
@@ -49,7 +49,7 @@ on run
 		end if
 		set {monitorHeight, monitorWidth} to {Height, Width} of monitorProps
 		set topBound to menubarHeight + standardGap
-		if (monitorWidth ² 1920) then
+		if (monitorWidth â‰¤ 1920) then
 			set leftBound to (monitorWidth - maxWindowWidth) / 2 + leftGap
 			set boundWidth to maxWindowWidth - leftGap - standardGap
 		else
@@ -64,7 +64,7 @@ on run
 				-- Cascade windows
 				set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Downloads" and name is not "Open")
 				set windowCount to count of standardWindows
-				if windowCount ³ 1 then
+				if windowCount â‰¥ 1 then
 					-- set standardWindows to reverse of standardWindows
 					set standardWindows to standardWindows
 					set maxWidth to boundWidth
