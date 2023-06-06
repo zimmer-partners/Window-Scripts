@@ -2,19 +2,19 @@
 
 -- APP SPECIFIC SETTINGS
 -- Apps to be excluded in general
-property excludeApps : {"Microsoft Word", "prl_client_app", "iTunify", "Smaller"}
+property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT"}
 -- Apps whose windows should snap to the edges of the screen
 property snapToEdgeApps : {"Zattoo", "Reminders", "Console", "Activity Monitor", "Transmit", "Dictionary", "Pukka", "Address Book", "CSSEdit", "Linkinus", "Feeder", "FlexTime", "Hibari", "Twitterrific", "Tagalicious", "AirFoil", "TextEdit", "HelpViewer", "Keychain Access", "Osfoora", "Disk Utility", "Contacts", "Harvest", "TestFlight", "TextExpander", "Notes", "iChat", "Transmission", "HockeyApp", "Font Book", "Mail", "Dash", "Terminal", "Codebug", "Creative Cloud", "Finder", "iTunes", "App Store", "Preview", "Erinnerungen", "Toast Titanium", "Subler", "ClamXAV", "Microsoft OneNote", "On The Job", "HandBrake", "IPNetMonitorX", "Soulver 3", "ViDL", "Apple Configurator 2", "Teams", "GitUp", "Facetime"}
--- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)
-property extraRightGapApps : {"Finder"}
--- Extra right gap in pixels (mostly used to guarantee desktop objects not overlapping)
-property extraRightGap : 225
 -- Apps whose windows should be centered
 property centeredApps : {"Software Update", "Installer", "Server", "Boot Camp-Assistent", "System Preferences", "System Settings"}
 -- Apps whose windows should be max heightened
 property maxHeightApps : {"Messages", "Skype", "Twitter", "Tweetbot", "Espresso", "Messenger", "WhatsApp", "Franz", "Google Chrome", "Signal Private Messenger", "Rocket.Chat", "Signal", "Slack", "Telegram", "Coda 2", "Xcode", "MacGDBp", "MakeMKV", "Microsoft To Do", "Nova", "Cisco Jabber"}
 -- Apps whose should be spanned across the whole screen
-property fullscreenApps : {"Maps", "Photos", "Merlin Project Express", "Calendar", "Numbers", "Microsoft Excel", "Microsoft Edge", "Affinity Designer", "Affinity Photo", "iMovie", "banana90", "Microsoft Outlook", "TV", "Fantastical"}
+property fullscreenApps : {"Maps", "Photos", "Merlin Project Express", "Calendar", "Numbers", "Microsoft Excel", "Microsoft Edge", "Affinity Designer", "Affinity Photo", "iMovie", "banana90", "Microsoft Outlook", "TV", "Fantastical", "Affinity Designer 2", "Affinity Photo 2", "Affinity Publisher 2"}
+-- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)
+property extraRightGapApps : {"Finder"}
+-- Extra right gap in pixels (mostly used to guarantee desktop objects not overlapping)
+property extraRightGap : 225
 
 -- WINDOW SPECIFIC SETTINGS
 -- Windows that should be excluded from the cascade (part of name)
@@ -27,10 +27,10 @@ property maxWindowWidth : 1275
 property maxWideWindowWidth : 1475
 property stackingGap : 35
 property standardGap : 5
-property dockGap : 0
+property dockGap : 10
 property desktopGap : 250
 property snappingGap : 20
-property menubarHeight : 23
+property menubarHeight : 25
 
 -- Iternal
 property monitorHeight : 0
