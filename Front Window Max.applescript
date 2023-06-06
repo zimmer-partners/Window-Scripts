@@ -8,10 +8,10 @@ property maxWindowWidth : 1275
 property maxWideWindowWidth : 1475
 property stackingGap : 35
 property standardGap : 5
-property dockGap : 0
-property finderGap : 165
+property dockGap : 10
+property desktopGap : 250
 property snappingGap : 20
-property menubarHeight : 23
+property menubarHeight : 25
 
 -- Iternal
 property monitorHeight : 0
