@@ -1,5 +1,10 @@
--- Written by Moritz Zimmer -- Concept & Code -- omo@oio.ch -- www.oio.ch --
--- ZÃ¼rich, November 14, 2009
+-- Written by moritz@zimmer.partners, September 4, 2023
+-- License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+
+use AppleScript version "2.4" -- Yosemite (10.10) or later
+use scripting additions
+use framework "Foundation"
+use framework "AppKit"
 
 property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Franz", "Signal Private Messenger"}
 
@@ -11,7 +16,7 @@ property standardGap : 5
 property dockGap : 10
 property desktopGap : 250
 property snappingGap : 20
-property menubarHeight : 25
+property menubarHeight : 25 -- 38 for Macs with Lasche, 25 for others
 
 -- Iternal
 property monitorHeight : 0
@@ -43,13 +48,15 @@ on run
 			set leftGap to standardGap
 			set bottomGap to standardGap
 		end if
-		set monitorProps to monitorProperties() of me
+		
+		-- Calculate positioning frame
+		set monitorProps to frame of screenRecords(true) of me
 		if monitorProps is null then
 			error "Couldn't get screen resolution"
 		end if
-		set {monitorHeight, monitorWidth} to {Height, Width} of monitorProps
+		set {monitorHeight, monitorWidth} to {height, width} of monitorProps
 		set topBound to menubarHeight + standardGap
-		if (monitorWidth â‰¤ 1920) then
+		if (monitorWidth ² 1920) then
 			set leftBound to (monitorWidth - maxWindowWidth) / 2 + leftGap
 			set boundWidth to maxWindowWidth - leftGap - standardGap
 		else
@@ -64,7 +71,7 @@ on run
 				-- Cascade windows
 				set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Downloads" and name is not "Open")
 				set windowCount to count of standardWindows
-				if windowCount â‰¥ 1 then
+				if windowCount ³ 1 then
 					-- set standardWindows to reverse of standardWindows
 					set standardWindows to standardWindows
 					set maxWidth to boundWidth
@@ -107,9 +114,25 @@ on GUIScripting_status()
 	end if
 end GUIScripting_status
 
-on monitorProperties()
-	tell application "Finder"
-		set screenResolution to bounds of window of desktop
-	end tell
-	return {Width:item 3 of screenResolution, Height:item 4 of screenResolution, OriginX:missing value, OriginY:missing value}
-end monitorProperties
+on screenRecords(mainScreenOnly)
+	-- Get the array of screens using Objective-C
+	set screens to current application's NSScreen's screens()
+	-- Convert the NSScreen objects to AppleScript records
+	set screenRecords to {}
+	repeat with screen in screens
+		set screenBounds to screen's frame()
+		set screenVisibleBounds to screen's visibleFrame()
+		set screenName to screen's localizedName() as string
+		set screenBackingScaleFactor to screen's backingScaleFactor() as string
+		if (item 1 of item 1 of screenBounds is 0 and item 2 of item 1 of screenBounds is 0) then
+			set screenRecord to {name:screenName, frame:{|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}, visibleFrame:{|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}, scaleFactor:screenBackingScaleFactor, isMainScreen:false}
+			if mainScreenOnly is true then
+				return screenRecord
+			end if
+		else
+			set screenRecord to {name:screenName, frame:{|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}, visibleFrame:{|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}, scaleFactor:screenBackingScaleFactor, isMainScreen:false}
+		end if
+		set end of screenRecords to screenRecord
+	end repeat
+	return screenRecords
+end screenRecords
