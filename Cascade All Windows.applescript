@@ -125,6 +125,7 @@ on run
 						repeat with xWindow in standardWindows
 							if (name of xWindow is not in excludeWindows) and (name of xWindow is not in snapToEdgesWindows) then
 								fillHeight(xWindow) of me
+								snapToEdge(xProcess, xWindow) of me
 							else if (name of xWindow is in snapToEdgesWindows) then
 								snapToEdge(xProcess, xWindow) of me
 							end if
