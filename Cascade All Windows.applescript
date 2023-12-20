@@ -10,7 +10,7 @@ use framework "AppKit"
 -- Apps to be excluded in general
 property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT", "Cisco Secure Client"}
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Zattoo", "Console", "ctivity Monitor", "Transmit", "Dictionary", "Pukka", "Address Book", "CSSEdit", "Linkinus", "Feeder", "FlexTime", "Hibari", "Twitterrific", "Tagalicious", "AirFoil", "TextEdit", "HelpViewer", "Keychain Access", "Osfoora", "Disk Utility", "Contacts", "Harvest", "TestFlight", "TextExpander", "Notes", "iChat", "Transmission", "HockeyApp", "Font Book", "Mail", "Dash", "Terminal", "Codebug", "Creative Cloud", "Finder", "iTunes", "App Store", "Preview", "Erinnerungen", "Toast Titanium", "Subler", "ClamXAV", "Microsoft OneNote", "On The Job", "HandBrake", "IPNetMonitorX", "Soulver 3", "ViDL", "Apple Configurator 2 MAS", "Teams", "MSTeams", "GitUp", "Facetime", "Machato"}
+property snapToEdgeApps : {"Zattoo", "Console", "ctivity Monitor", "Transmit", "Dictionary", "Pukka", "Address Book", "CSSEdit", "Linkinus", "Feeder", "FlexTime", "Hibari", "Twitterrific", "Tagalicious", "AirFoil", "TextEdit", "HelpViewer", "Keychain Access", "Osfoora", "Disk Utility", "Contacts", "Harvest", "TestFlight", "TextExpander", "Notes", "iChat", "Transmission", "HockeyApp", "Font Book", "Mail", "Dash", "Terminal", "Codebug", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "Toast Titanium", "Subler", "ClamXAV", "Microsoft OneNote", "On The Job", "HandBrake", "IPNetMonitorX", "Soulver 3", "ViDL", "Apple Configurator 2 MAS", "Teams", "MSTeams", "GitUp", "Facetime", "Machato"}
 -- Apps whose windows should be centered
 property centeredApps : {"Software Update", "Installer", "Server", "Boot Camp-Assistent", "System Preferences", "System Settings"}
 -- Apps whose windows should be max heightened
@@ -146,8 +146,6 @@ on run
 					set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name does not start with "Mobile Sync" and name does not start with "Template Chooser" and name does not start with "Web Inspector" and name does not start with "Source of" and name does not start with "API reference" and name does not end with "DrupalContrib" and name does not start with "PHP: " and name does not contain "LaserJet" and name does not contain "Samsung" and name does not contain "Brother" and name does not contain "Multiple Speakers" and name is not "Open") -- Filter windows by names
 					set windowCount to count of standardWindows
 					if windowCount ≥ 1 then
-						-- set standardWindows to reverse of standardWindows
-						set standardWindows to standardWindows
 						set maxWidth to boundWidth - ((windowCount - 1) * stackingGap)
 						set maxHeight to boundHeight - ((windowCount - 1) * stackingGap)
 						set stackOrder to 0
