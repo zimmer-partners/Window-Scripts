@@ -24,7 +24,7 @@ property extraRightGap : 225
 
 -- WINDOW SPECIFIC SETTINGS
 -- Windows that should be excluded from the cascade (part of name)
-property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API reference", "DrupalContrib", "PHP: ", "LaserJet", "Samsung", "Brother"}
+property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API reference", "DrupalContrib", "PHP: ", "LaserJet", "Samsung", "Brother", "Neue und zuletzt verwendete Dateien öffnen"}
 -- Windows that should be snapped to the edges (part of name) 
 property snapToEdgesWindows : {"Trash", "Downloads", "Web Inspector", "MiniPlayer"}
 
@@ -152,7 +152,7 @@ on run
 						set maxHeight to boundHeight - ((windowCount - 1) * stackingGap)
 						set stackOrder to 0
 						repeat with windowObject in standardWindows
-							if (name of windowObject is not in snapToEdgesWindows) then
+							if (name of windowObject is not in snapToEdgesWindows) and (name of windowObject is not in excludeWindows) then
 								set stackOrder to stackOrder + 1
 								cascadeWindow(stackOrder, maxWidth, maxHeight, windowObject) of me
 							else
