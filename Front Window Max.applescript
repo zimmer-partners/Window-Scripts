@@ -50,13 +50,15 @@ on run
 		end if
 		
 		-- Calculate positioning frame
-		set monitorProps to frame of screenRecords(true) of me
-		if monitorProps is null then
+		set screenProps to screenRecords(true) of me
+		if screenProps is {} then
 			error "Couldn't get screen resolution"
 		end if
+		set menubarHeight to menubarHeight of screenProps
+		set monitorProps to frame of screenProps
 		set {monitorHeight, monitorWidth} to {height, width} of monitorProps
 		set topBound to menubarHeight + standardGap
-		if (monitorWidth ² 1920) then
+		if (monitorWidth â‰¤ 1920) then
 			set leftBound to (monitorWidth - maxWindowWidth) / 2 + leftGap
 			set boundWidth to maxWindowWidth - leftGap - standardGap
 		else
@@ -71,7 +73,7 @@ on run
 				-- Cascade windows
 				set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Downloads" and name is not "Open")
 				set windowCount to count of standardWindows
-				if windowCount ³ 1 then
+				if windowCount â‰¥ 1 then
 					-- set standardWindows to reverse of standardWindows
 					set standardWindows to standardWindows
 					set maxWidth to boundWidth
@@ -124,13 +126,16 @@ on screenRecords(mainScreenOnly)
 		set screenVisibleBounds to screen's visibleFrame()
 		set screenName to screen's localizedName() as string
 		set screenBackingScaleFactor to screen's backingScaleFactor() as string
+		set screenFrame to {|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}
+		set screenVisibleFrame to {|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}
+		set screenMenuBarHeight to ((height of screenFrame) - (height of screenVisibleFrame) - (top of screenVisibleFrame))
 		if (item 1 of item 1 of screenBounds is 0 and item 2 of item 1 of screenBounds is 0) then
-			set screenRecord to {name:screenName, frame:{|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}, visibleFrame:{|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}, scaleFactor:screenBackingScaleFactor, isMainScreen:false}
+			set screenRecord to {name:screenName, frame:screenFrame, visibleFrame:screenVisibleFrame, scaleFactor:screenBackingScaleFactor, menubarHeight:screenMenuBarHeight, isMainScreen:false}
 			if mainScreenOnly is true then
 				return screenRecord
 			end if
 		else
-			set screenRecord to {name:screenName, frame:{|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}, visibleFrame:{|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}, scaleFactor:screenBackingScaleFactor, isMainScreen:false}
+			set screenRecord to {name:screenName, frame:screenFrame, visibleFrame:screenVisibleBounds, scaleFactor:screenBackingScaleFactor, menubarHeight:screenMenuBarHeight, isMainScreen:false}
 		end if
 		set end of screenRecords to screenRecord
 	end repeat

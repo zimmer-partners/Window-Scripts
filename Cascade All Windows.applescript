@@ -1,4 +1,4 @@
-﻿-- Written by moritz@zimmer.partners, September 4, 2023
+-- Written by moritz@zimmer.partners, September 4, 2023
 -- License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
 
 use AppleScript version "2.4" -- Yosemite (10.10) or later
@@ -8,7 +8,7 @@ use framework "AppKit"
 
 -- APP SPECIFIC SETTINGS
 -- Apps to be excluded in general
-property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT"}
+property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT", "Cisco Secure Client"}
 -- Apps whose windows should snap to the edges of the screen
 property snapToEdgeApps : {"Zattoo", "Console", "ctivity Monitor", "Transmit", "Dictionary", "Pukka", "Address Book", "CSSEdit", "Linkinus", "Feeder", "FlexTime", "Hibari", "Twitterrific", "Tagalicious", "AirFoil", "TextEdit", "HelpViewer", "Keychain Access", "Osfoora", "Disk Utility", "Contacts", "Harvest", "TestFlight", "TextExpander", "Notes", "iChat", "Transmission", "HockeyApp", "Font Book", "Mail", "Dash", "Terminal", "Codebug", "Creative Cloud", "Finder", "iTunes", "App Store", "Preview", "Erinnerungen", "Toast Titanium", "Subler", "ClamXAV", "Microsoft OneNote", "On The Job", "HandBrake", "IPNetMonitorX", "Soulver 3", "ViDL", "Apple Configurator 2 MAS", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Machato"}
 -- Apps whose windows should be centered
@@ -24,7 +24,7 @@ property extraRightGap : 180
 
 -- WINDOW SPECIFIC SETTINGS
 -- Windows that should be excluded from the cascade (part of name)
-property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API reference", "DrupalContrib", "PHP: ", "LaserJet", "Samsung", "Brother"}
+property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API reference", "DrupalContrib", "PHP: ", "LaserJet", "Samsung", "Brother", "Citrix Workspace", "Neue und zuletzt verwendete Dateien öffnen"}
 -- Windows that should be snapped to the edges (part of name) 
 property snapToEdgesWindows : {"Trash", "Downloads", "Web Inspector", "MiniPlayer"}
 
@@ -125,6 +125,7 @@ on run
 						repeat with xWindow in standardWindows
 							if (name of xWindow is not in excludeWindows) and (name of xWindow is not in snapToEdgesWindows) then
 								fillHeight(xWindow) of me
+								snapToEdge(xProcess, xWindow) of me
 							else if (name of xWindow is in snapToEdgesWindows) then
 								snapToEdge(xProcess, xWindow) of me
 							end if
@@ -151,7 +152,7 @@ on run
 						set maxHeight to boundHeight - ((windowCount - 1) * stackingGap)
 						set stackOrder to 0
 						repeat with windowObject in standardWindows
-							if (name of windowObject is not in snapToEdgesWindows) then
+							if (name of windowObject is not in snapToEdgesWindows) and (name of windowObject is not in excludeWindows) then
 								set stackOrder to stackOrder + 1
 								cascadeWindow(stackOrder, maxWidth, maxHeight, windowObject) of me
 							else
