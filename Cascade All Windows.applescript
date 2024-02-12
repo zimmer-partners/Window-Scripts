@@ -153,7 +153,7 @@ on run
 							if (name of windowObject is not in snapToEdgesWindows) and (name of windowObject is not in excludeWindows) then
 								set stackOrder to stackOrder + 1
 								cascadeWindow(stackOrder, maxWidth, maxHeight, windowObject) of me
-							else
+							else if (name of windowObject is in snapToEdgesWindows) then
 								snapToEdge(xProcess, windowObject) of me
 							end if
 						end repeat
