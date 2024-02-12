@@ -23,9 +23,9 @@ property extraRightGapApps : {"Finder"}
 property extraRightGap : 225
 
 -- WINDOW SPECIFIC SETTINGS
--- Windows that should be excluded from the cascade (part of name)
+-- Window names that should be excluded from the cascade
 property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API reference", "DrupalContrib", "PHP: ", "LaserJet", "Samsung", "Brother", "Citrix Workspace", "Neue und zuletzt verwendete Dateien öffnen"}
--- Windows that should be snapped to the edges (part of name) 
+-- Window names that should be snapped to the edges
 property snapToEdgesWindows : {"Trash", "Downloads", "Web Inspector", "MiniPlayer"}
 
 -- GEOMETRY SETTINGS
