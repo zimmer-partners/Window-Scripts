@@ -38,7 +38,7 @@ on run
 		else
 			set bottomGap to topGap
 		end if
-
+		
 		-- Calculate positioning frame
 		set screenProps to screenRecords(true) of me
 		if screenProps is {} then
@@ -63,14 +63,7 @@ on run
 			if name of xProcess is not in excludeApps then
 				set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Downloads" and name is not "Open")
 				set windowCount to count of standardWindows
-				if windowCount ≥ 1 then
-					set maxWidth to boundWidth
-					set maxHeight to boundHeight
-					set x to 0
-					repeat with xWindow in standardWindows
-						fillScreen(xWindow) of me
-					end repeat
-				end if
+				fillScreen(item 1 of standardWindows) of me
 			end if
 		end repeat
 	end tell
