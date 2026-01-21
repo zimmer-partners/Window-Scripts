@@ -12,8 +12,8 @@ property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "A
 property maxWindowWidth : 1275
 property maxWideWindowWidth : 1475
 property stackingGap : 35
-property standardGap : 7
-property dockGap : 9
+property standardGap : 8
+property dockGap : 13
 property desktopGap : 250
 property snappingGap : 20
 property menubarHeight : 25 -- 38 for Macs with Lasche, 25 for others
@@ -58,7 +58,7 @@ on run
 		set monitorProps to frame of screenProps
 		set {monitorHeight, monitorWidth} to {height, width} of monitorProps
 		set topBound to menubarHeight + standardGap
-		if (monitorWidth â‰¤ 1920) then
+		if (monitorWidth ² 1920) then
 			set leftBound to (monitorWidth - maxWindowWidth) / 2 + leftGap
 			set boundWidth to maxWindowWidth - leftGap - standardGap
 		else
@@ -73,7 +73,7 @@ on run
 				-- Cascade windows
 				set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Downloads" and name is not "Open")
 				set windowCount to count of standardWindows
-				if windowCount â‰¥ 1 then
+				if windowCount ³ 1 then
 					-- set standardWindows to reverse of standardWindows
 					set standardWindows to standardWindows
 					set maxWidth to boundWidth
