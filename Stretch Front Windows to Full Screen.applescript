@@ -12,8 +12,8 @@ property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "A
 property maxWindowWidth : 1275
 property maxWideWindowWidth : 1475
 property stackingGap : 35
-property standardGap : 7
-property dockGap : 9
+property standardGap : 8
+property dockGap : 14
 property desktopGap : 250
 property snappingGap : 20
 property menubarHeight : 25 -- 38 for Macs with Lasche, 25 for others
