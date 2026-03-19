@@ -16,7 +16,7 @@ property maxHeightApps : {"Messages", "Skype", "Twitter", "Tweetbot", "Espresso"
 -- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)
 property extraRightGapApps : {"Finder"}
 -- Extra right gap in pixels (mostly used to guarantee desktop objects not overlapping)
-property extraRightGap : 225
+property extraRightGap : 85
 
 -- WINDOW SPECIFIC SETTINGS
 -- Windows that should be excluded from the cascade (part of name)
@@ -30,7 +30,7 @@ property maxWideWindowWidth : 1475
 property stackingGap : 35
 property standardGap : 8
 property dockGap : 13
-property desktopGap : 250
+property desktopGap : 0
 property snappingGap : 20
 property menubarHeight : 25 -- 38 for Macs with Lasche, 25 for others
 

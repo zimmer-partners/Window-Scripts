@@ -12,7 +12,7 @@ property maxWideWindowWidth : 1475
 property stackingGap : 35
 property standardGap : 8
 property dockGap : 13
-property desktopGap : 250
+property desktopGap : 0
 property snappingGap : 20
 property menubarHeight : 25 -- 38 for Macs with Lasche, 25 for others
 
