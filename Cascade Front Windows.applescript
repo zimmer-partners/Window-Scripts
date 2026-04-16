@@ -29,8 +29,8 @@ property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API refer
 property snapToEdgesWindows : {"Trash", "Downloads", "Web Inspector", "MiniPlayer"}
 
 -- GEOMETRY SETTINGS
-property maxWindowWidth : 1275
-property maxWideWindowWidth : 1475
+property maxWindowWidth : 1075
+property maxWideWindowWidth : 1175
 property stackingGap : 35
 property standardGap : 8
 property dockGap : 13
