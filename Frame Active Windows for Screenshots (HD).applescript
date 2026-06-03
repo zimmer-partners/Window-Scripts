@@ -1,7 +1,8 @@
 -- Written by moritz@zimmer.partners, September 4, 2023
 -- License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
 
-property windowSize : {1140, 712}
+property standardGap : 8
+property windowSize : {1280 - 2 * standardGap, 800 - 2 * standardGap}
 
 on run
 	GUIScripting_status()
