@@ -9,8 +9,8 @@ use framework "AppKit"
 property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Signal Private Messenger"}
 
 -- GEOMETRY SETTINGS
-property maxWindowWidth : 1075
-property maxWideWindowWidth : 1175
+property maxWindowWidth : 1264  -- Small displays, i.e. 1280 - 2xStandardGap, i.e. 8
+property maxWideWindowWidth : 1424 -- QHD displays, i.e. 1440 - 2xStandardGap, i.e. 8
 property stackingGap : 35
 property standardGap : 8
 property dockGap : 13
