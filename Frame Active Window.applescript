@@ -6,7 +6,8 @@ use scripting additions
 use framework "Foundation"
 use framework "AppKit"
 
-property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Franz", "Signal Private Messenger"}
+-- property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Franz", "Signal Private Messenger"}
+property excludeApps : {}
 
 -- GEOMETRY SETTINGS
 property maxWindowWidth : 1264  -- Small displays, i.e. 1280 - 2xStandardGap, i.e. 8
