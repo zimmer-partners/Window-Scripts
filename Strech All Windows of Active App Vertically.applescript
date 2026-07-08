@@ -8,9 +8,9 @@ use framework "AppKit"
 
 -- APP SPECIFIC SETTINGS
 -- Apps to be excluded in general
-property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT"}
+property excludeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Zattoo", "Console", "Activity Monitor", "Transmit", "Dictionary", "Pukka", "Address Book", "CSSEdit", "Linkinus", "Feeder", "FlexTime", "Hibari", "Twitterrific", "Tagalicious", "AirFoil", "TextEdit", "HelpViewer", "Keychain Access", "Osfoora", "Disk Utility", "Contacts", "Harvest", "TestFlight", "TextExpander", "Notes", "iChat", "Transmission", "HockeyApp", "Font Book", "Dash", "Terminal", "Codebug", "Creative Cloud", "Finder", "iTunes", "App Store", "Preview", "Erinnerungen", "Toast Titanium", "Subler", "ClamXAV", "Microsoft OneNote", "On The Job", "HandBrake", "IPNetMonitorX", "Soulver 3", "ViDL", "Apple Configurator 2", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Machato"}
+property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
 -- Apps whose windows should be max heightened
 property maxHeightApps : {"Messages", "Skype", "Twitter", "Tweetbot", "Espresso", "Messenger", "WhatsApp", "Franz", "Google Chrome", "Signal Private Messenger", "Rocket.Chat", "Signal", "Slack", "Telegram", "Coda 2", "Xcode", "MacGDBp", "MakeMKV", "Microsoft To Do", "Nova", "Cisco Jabber", "Reminders"}
 -- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)

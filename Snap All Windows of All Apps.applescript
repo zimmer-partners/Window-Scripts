@@ -8,7 +8,7 @@ use framework "AppKit"
 
 -- APP SPECIFIC SETTINGS
 -- Apps to be excluded in general
-property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT"}
+property excludeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
 -- Apps whose windows should be max heightened
 property maxHeightApps : {"Messages", "Skype", "Twitter", "Tweetbot", "Espresso", "Messenger", "WhatsApp", "Franz", "Google Chrome", "Signal Private Messenger", "Rocket.Chat", "Signal", "Slack", "Telegram", "Coda 2", "Xcode", "MacGDBp", "MakeMKV", "Microsoft To Do", "Nova", "Cisco Jabber"}
 -- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)

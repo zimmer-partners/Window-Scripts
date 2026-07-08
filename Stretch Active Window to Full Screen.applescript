@@ -6,7 +6,7 @@ use scripting additions
 use framework "Foundation"
 use framework "AppKit"
 
-property excludeApps : {"Finder", "Terminal", "Transmit", "Tweetie", "Pukka", "Address Book", "iChat", "Skype", "Messages", "Signal Private Messenger"}
+property excludeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
 
 -- GEOMETRY SETTINGS
 property maxWindowWidth : 1264  -- Small displays, i.e. 1280 - 2xStandardGap, i.e. 8
