@@ -8,7 +8,7 @@ use framework "AppKit"
 
 -- APP SPECIFIC SETTINGS
 -- Apps to be excluded in general
-property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
+property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT", "Cisco Secure Client"}
 -- Apps whose windows should snap to the edges of the screen
 property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
 -- Apps whose windows should be centered
@@ -96,7 +96,7 @@ on run
 				if name of xProcess is in snapToEdgeApps then
 					-- Snap windows to edges
 					set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Open") & (windows of xProcess whose subrole is "AXUnknown" and name is not "Open")
-					repeat with xWindow in sta﻿﻿ndardWindows
+					repeat with xWindow in standardWindows
 						if (name of xWindow is not in excludeWindows) then
 							snapToEdge(xProcess, xWindow) of me
 						end if
@@ -153,7 +153,7 @@ on run
 							if (name of windowObject is not in snapToEdgesWindows) and (name of windowObject is not in excludeWindows) then
 								set stackOrder to stackOrder + 1
 								cascadeWindow(stackOrder, maxWidth, maxHeight, windowObject) of me
-							else if (name of windowObject is in snapToEdgesWindows) the﻿n﻿
+							else if (name of windowObject is in snapToEdgesWindows) then
 								snapToEdge(xProcess, windowObject) of me
 							end if
 						end repeat
@@ -270,7 +270,7 @@ on screenRecords(mainScreenOnly)
 		set screenName to screen's localizedName() as string
 		set screenBackingScaleFactor to screen's backingScaleFactor() as string
 		set screenFrame to {|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}
-		set screenVisibleFrame to {|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, hei﻿gh﻿t:item 2 of item 2 of screenVisibleBounds}
+		set screenVisibleFrame to {|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}
 		set screenMenuBarHeight to ((height of screenFrame) - (height of screenVisibleFrame) - (top of screenVisibleFrame))
 		if (item 1 of item 1 of screenBounds is 0 and item 2 of item 1 of screenBounds is 0) then
 			set screenRecord to {name:screenName, frame:screenFrame, visibleFrame:screenVisibleFrame, scaleFactor:screenBackingScaleFactor, menubarHeight:screenMenuBarHeight, isMainScreen:false}
