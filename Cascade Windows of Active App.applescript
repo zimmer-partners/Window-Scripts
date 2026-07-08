@@ -29,7 +29,7 @@ property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API refer
 property snapToEdgesWindows : {"Trash", "Downloads", "Web Inspector", "MiniPlayer"}
 
 -- GEOMETRY SETTINGS
-property maxWindowWidth : 1264  -- Small displays, i.e. 1280 - 2xStandardGap, i.e. 8
+property maxWindowWidth : 1264 -- Small displays, i.e. 1280 - 2xStandardGap, i.e. 8
 property maxWideWindowWidth : 1424 -- QHD displays, i.e. 1440 - 2xStandardGap, i.e. 8
 property stackingGap : 35
 property standardGap : 8
@@ -97,7 +97,7 @@ on run
 					-- Snap windows to edges
 					set standardWindows to (windows of xProcess whose subrole is "AXStandardWindow" and value of attribute "AXFullScreen" is false and name is not "Open") & (windows of xProcess whose subrole is "AXUnknown" and name is not "Open")
 					repeat with xWindow in standardWindows
-						if (name of xWindow is not in﻿ excludeWindows) then
+						if (name of xWindow is not in excludeWindows) then
 							snapToEdge(xProcess, xWindow) of me
 						end if
 					end repeat
@@ -154,7 +154,7 @@ on run
 								set stackOrder to stackOrder + 1
 								cascadeWindow(stackOrder, maxWidth, maxHeight, windowObject) of me
 							else if (name of windowObject is in snapToEdgesWindows) then
-								snapToEdge(xProcess, windowObject) of m﻿e
+								snapToEdge(xProcess, windowObject) of me
 							end if
 						end repeat
 					end if
@@ -271,7 +271,7 @@ on screenRecords(mainScreenOnly)
 		set screenBackingScaleFactor to screen's backingScaleFactor() as string
 		set screenFrame to {|left|:item 1 of item 1 of screenBounds, top:item 2 of item 1 of screenBounds, width:item 1 of item 2 of screenBounds, height:item 2 of item 2 of screenBounds}
 		set screenVisibleFrame to {|left|:item 1 of item 1 of screenVisibleBounds, top:item 2 of item 1 of screenVisibleBounds, width:item 1 of item 2 of screenVisibleBounds, height:item 2 of item 2 of screenVisibleBounds}
-		set﻿ screenMenuBarHeight to ((height of screenFrame) - (height of screenVisibleFrame) - (top of screenVisibleFrame))
+		set screenMenuBarHeight to ((height of screenFrame) - (height of screenVisibleFrame) - (top of screenVisibleFrame))
 		if (item 1 of item 1 of screenBounds is 0 and item 2 of item 1 of screenBounds is 0) then
 			set screenRecord to {name:screenName, frame:screenFrame, visibleFrame:screenVisibleFrame, scaleFactor:screenBackingScaleFactor, menubarHeight:screenMenuBarHeight, isMainScreen:false}
 			if mainScreenOnly is true then
