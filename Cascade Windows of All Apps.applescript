@@ -10,7 +10,7 @@ use framework "AppKit"
 -- Apps to be excluded in general
 property excludeApps : {"prl_client_app", "iTunify", "Smaller", "MacGPT", "Cisco Secure Client"}
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
+property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude"}
 -- Apps whose windows should be centered
 property centeredApps : {"Installer", "System Preferences", "System Settings"}
 -- Apps whose windows should be max heightened
