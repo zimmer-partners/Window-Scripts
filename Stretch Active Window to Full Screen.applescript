@@ -6,7 +6,7 @@ use scripting additions
 use framework "Foundation"
 use framework "AppKit"
 
-property excludeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate"}
+property excludeApps : {"prl_client_app"}
 
 -- GEOMETRY SETTINGS
 property maxWindowWidth : 1264  -- Small displays, i.e. 1280 - 2xStandardGap, i.e. 8
