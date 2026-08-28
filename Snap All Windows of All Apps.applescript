@@ -10,7 +10,7 @@ use framework "AppKit"
 -- Apps to be excluded in general
 property excludeApps : {"prl_client_app"}
 -- Apps whose windows should be max heightened
-property maxHeightApps : {"Xcode"}
+property maxHeightApps : {"Xcode", "Microsoft To Do"}
 -- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)
 property extraRightGapApps : {"Finder"}
 -- Extra right gap in pixels (mostly used to guarantee desktop objects not overlapping)
