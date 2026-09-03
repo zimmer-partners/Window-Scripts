@@ -10,7 +10,7 @@ use framework "AppKit"
 -- Apps to be excluded in general
 property excludeApps : {"prl_client_app"}
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Mail", Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "stable"} -- "stable" is for Warp -- "stable" is for Warp
+property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "Erinnerungen", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Mail", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "stable"} -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp
 -- Apps whose windows should be max heightened
 property maxHeightApps : {"Xcode", "Microsoft To Do"}
 -- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)
