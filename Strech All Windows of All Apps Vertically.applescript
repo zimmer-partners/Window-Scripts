@@ -7,21 +7,33 @@ use framework "Foundation"
 use framework "AppKit"
 
 -- APP SPECIFIC SETTINGS
+
 -- Apps to be excluded in general
 property excludeApps : {"prl_client_app"}
+
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "stable"} -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp -- "stable" is for Warp
+property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "iPhone Mirroring", "stable"} -- "stable" is for Warp
+
+-- Apps whose windows should be centered
+property centeredApps : {"Installer", "System Preferences", "System Settings", "Citrix Workspace"}
+
 -- Apps whose windows should be max heightened
 property maxHeightApps : {"Erinnerungen", "Reminders", "Xcode", "Microsoft To Do"}
+
+-- Apps whose should be spanned across the whole screen
+property fullscreenApps : {"Maps", "Photos", "Calendar", "Numbers", "Microsoft Excel", "Affinity Designer", "Affinity Photo", "Affinity Publisher", "iMovie", "TV", "Citrix Viewer"}
+
 -- Apps in need for extra gap to the right screen border (only applied to apps with windows snapping to edges)
 property extraRightGapApps : {"Finder"}
 -- Extra right gap in pixels (mostly used to guarantee desktop objects not overlapping)
 property extraRightGap : 75
 
 -- WINDOW SPECIFIC SETTINGS
--- Windows that should be excluded from the cascade (part of name)
+
+-- Window names that should be excluded from the cascade
 property excludeWindows : {"Copy", "Mobile Sync", "Template Chooser", "API reference", "DrupalContrib", "PHP: ", "LaserJet", "Samsung", "Brother", "Neue und zuletzt verwendete Dateien öffnen"}
--- Windows that should be snapped to the edges (part of name) 
+
+-- Window names that should be snapped to the edges
 property snapToEdgesWindows : {"Trash", "Downloads", "Web Inspector", "MiniPlayer"}
 
 -- GEOMETRY SETTINGS
