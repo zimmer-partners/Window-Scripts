@@ -12,7 +12,7 @@ use framework "AppKit"
 property excludeApps : {"prl_client_app"}
 
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "iPhone Mirroring", "Calendar", "stable"} -- "stable" is for Warp
+property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "iPhone Mirroring", "Calendar", "Safari Technology Preview", "stable"} -- "stable" is for Warp
 
 -- Apps whose windows should be centered
 property centeredApps : {"Installer", "System Preferences", "System Settings", "Citrix Workspace"}
