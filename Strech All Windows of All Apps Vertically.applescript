@@ -12,13 +12,13 @@ use framework "AppKit"
 property excludeApps : {"prl_client_app"}
 
 -- Apps whose windows should snap to the edges of the screen
-property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "iPhone Mirroring", "Calendar", "Safari Technology Preview", "Music", "Toggl Track","BoltAI", "Mail", "Cisco Secure Client", "stable"} -- "stable" is for Warp
+property snapToEdgeApps : {"Console", "Activity Monitor", "Dictionary", "Address Book", "TextEdit", "HelpViewer", "Keychain Access", "Disk Utility", "Contacts", "TestFlight", "Notes", "Font Book", "Dash", "Terminal", "Creative Cloud", "Finder", "App Store", "Preview", "ClamXAV", "Microsoft OneNote", "Teams", "Microsoft Teams (work or school)", "MSTeams", "GitUp", "Facetime", "Microsoft AutoUpdate", "Claude", "Messages", "WhatsApp", "Signal Private Messenger", "Signal", "Slack", "Telegram", "iPhone Mirroring", "Calendar", "Safari Technology Preview", "Music", "Toggl Track", "BoltAI", "Mail", "Microsoft Excel", "Cisco Secure Client", "stable"} -- "stable" is for Warp
 
 -- Apps whose windows should be centered
 property centeredApps : {"Installer", "System Preferences", "System Settings", "Citrix Workspace"}
 
 -- Apps whose windows should be max heightened
-property maxHeightApps : {"Erinnerungen", "Reminders", "Xcode", "Microsoft To Do"}
+property maxHeightApps : {"Erinnerungen", "Reminders", "Xcode", "Microsoft Word", "Microsoft To Do"}
 
 -- Apps whose should be spanned across the whole screen
 property fullscreenApps : {"Maps", "Photos", "Numbers", "Microsoft Excel", "Affinity Designer", "Affinity Photo", "Affinity Publisher", "iMovie", "TV", "Citrix Viewer"}
